@@ -45,7 +45,7 @@ const uint8 CYCODE USBFS_1_DEVICE0_DESCR[18u] = {
 /* idProduct                               */ 0x13u, 0xE0u,
 /* bcdDevice                               */ 0x00u, 0x00u,
 /* iManufacturer                           */ 0x02u,
-/* iProduct                                */ 0x03u,
+/* iProduct                                */ 0x04u,
 /* iSerialNumber                           */ 0x80u,
 /* bNumConfigurations                      */ 0x01u
 };
@@ -98,7 +98,7 @@ const uint8 CYCODE USBFS_1_DEVICE0_CONFIGURATION0_DESCR[34u] = {
 /*********************************************************************
 * String Descriptor Table
 *********************************************************************/
-const uint8 CYCODE USBFS_1_STRING_DESCRIPTORS[53u] = {
+const uint8 CYCODE USBFS_1_STRING_DESCRIPTORS[61u] = {
 /*********************************************************************
 * Language ID Descriptor
 *********************************************************************/
@@ -120,12 +120,18 @@ const uint8 CYCODE USBFS_1_STRING_DESCRIPTORS[53u] = {
  (uint8)'C', 0u,(uint8)'o', 0u,(uint8)'s', 0u,(uint8)'i', 0u,(uint8)'n', 0u,
  (uint8)'e', 0u,
 /*********************************************************************
-* String Descriptor: "Footpedal"
+* String Descriptor: "Yoke"
 *********************************************************************/
-/* Descriptor Length                       */ 0x14u,
+/* Descriptor Length                       */ 0x0Au,
 /* DescriptorType: STRING                  */ 0x03u,
- (uint8)'F', 0u,(uint8)'o', 0u,(uint8)'o', 0u,(uint8)'t', 0u,(uint8)'p', 0u,
- (uint8)'e', 0u,(uint8)'d', 0u,(uint8)'a', 0u,(uint8)'l', 0u,
+ (uint8)'Y', 0u,(uint8)'o', 0u,(uint8)'k', 0u,(uint8)'e', 0u,
+/*********************************************************************
+* String Descriptor: "ACAPYoke"
+*********************************************************************/
+/* Descriptor Length                       */ 0x12u,
+/* DescriptorType: STRING                  */ 0x03u,
+ (uint8)'A', 0u,(uint8)'C', 0u,(uint8)'A', 0u,(uint8)'P', 0u,(uint8)'Y', 0u,
+ (uint8)'o', 0u,(uint8)'k', 0u,(uint8)'e', 0u,
 /*********************************************************************/
 /* Marks the end of the list.              */ 0x00u};
 /*********************************************************************/
@@ -141,7 +147,7 @@ const uint8 CYCODE USBFS_1_SN_STRING_DESCRIPTOR[2] = {
 /*********************************************************************
 * HID Report Descriptor: HID Report Descriptor 1
 *********************************************************************/
-const uint8 CYCODE USBFS_1_HIDREPORT_DESCRIPTOR1[33u] = {
+const uint8 CYCODE USBFS_1_HIDREPORT_DESCRIPTOR1[27u] = {
 /*  Descriptor Size (Not part of descriptor)*/ USBFS_1_HID_RPT_1_SIZE_LSB,
 USBFS_1_HID_RPT_1_SIZE_MSB,
 /* USAGE_PAGE                              */ 0x05u, 0x01u, 
@@ -149,15 +155,12 @@ USBFS_1_HID_RPT_1_SIZE_MSB,
 /* COLLECTION                              */ 0xA1u, 0x01u, 
 /* USAGE_PAGE                              */ 0x05u, 0x09u, 
 /* USAGE_MINIMUM                           */ 0x19u, 0x01u, 
-/* USAGE_MAXIMUM                           */ 0x29u, 0x06u, 
+/* USAGE_MAXIMUM                           */ 0x29u, 0x18u, 
 /* LOGICAL_MINIMUM                         */ 0x15u, 0x00u, 
 /* LOGICAL_MAXIMUM                         */ 0x25u, 0x01u, 
-/* REPORT_COUNT                            */ 0x95u, 0x06u, 
+/* REPORT_COUNT                            */ 0x95u, 0x18u, 
 /* REPORT_SIZE                             */ 0x75u, 0x01u, 
 /* INPUT                                   */ 0x81u, 0x02u, 
-/* REPORT_COUNT                            */ 0x95u, 0x01u, 
-/* REPORT_SIZE                             */ 0x75u, 0x02u, 
-/* INPUT                                   */ 0x81u, 0x03u, 
 /* END_COLLECTION                          */ 0xC0u, 
 /*********************************************************************/
 /* End of the HID Report Descriptor        */ 0x00u, 0x00u};
